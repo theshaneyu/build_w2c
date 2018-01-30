@@ -62,8 +62,13 @@ if __name__ == '__main__':
             self.wiki = wiki
 
         def __iter__(self):
+            count = 0
             for sentence in self.wiki.get_texts():
-                yield list(map(lambda x: x.decode('utf-8'), sentence))
+                try:
+                    yield list(map(lambda x: x.decode('utf-8'), sentence))
+                    print(sentence)
+                except Exception as e:
+                    yield sentence
 
     # Initialize simple sentence iterator required for the Word2Vec model
     sentences = SentencesIterator(wiki)
