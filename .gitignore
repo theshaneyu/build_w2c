@@ -1,6 +1,8 @@
 nohup.out
 English/data
 English/model
+Chinese/build
+*.bin
 
 # Project stuff
 entrance/settings_database.py
